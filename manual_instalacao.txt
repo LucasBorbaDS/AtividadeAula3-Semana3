@@ -1,0 +1,64 @@
+MANUAL DO ZERO: INSTALAÇÃO DO PYTHON, GIT, VS CODE E BIBLIOTECAS
+
+Este guia ensina a instalar todas as ferramentas necessárias para trabalhar com Análise de Dados e Data Science no Windows, utilizando o método mais moderno e rápido do mercado (o gerenciador uv).
+
+---
+
+1. Instalação do VS Code (Editor de Código)
+O VS Code é onde você vai escrever seus códigos e abrir seus notebooks.
+
+- Acesse o site oficial do Visual Studio Code (https://code.visualstudio.com/).
+- Clique no botão azul "Download for Windows".
+- Abra o instalador baixado, aceite os termos de licença e clique em Avançar até o final.
+- Dica: Na tela de tarefas adicionais, marque as caixas "Adicionar ação 'Abrir com Code'" para facilitar sua vida. Clique em Instalar e depois em Concluir.
+
+---
+
+2. Instalação e Configuração do Git
+O Git serve para salvar o histórico do seu projeto e enviar seus trabalhos para o GitHub.
+
+- Acesse o site oficial do Git for Windows (https://git-scm.com/).
+- Clique no botão "Download" para baixar o instalador de 64-bit.
+- Abra o instalador e clique em Next em todas as telas (pode manter as opções padrão do instalador). Clique em Install e depois em Finish.
+- Configuração de Identidade: Abra o menu iniciar do Windows, digite PowerShell e abra-o. Digite os seguintes comandos (ajustando com os seus dados reais do GitHub):
+  git config --global user.name "Nome de Usuário"
+  git config --global user.email "seu.email@github.com"
+
+---
+
+3. Instalação Automática do Python via uv
+Em vez de instalar o Python do jeito antigo (que costuma dar erros de caminhos no Windows), vamos usar o uv, que é o gerenciador de Python mais rápido do mundo.
+
+- Com o mesmo PowerShell aberto, copie, cole o comando abaixo e dê Enter para instalar o uv:
+  powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+- Feche o seu PowerShell e abra um novo para atualizar o sistema.
+- Para instalar a versão estável mais recente do Python automaticamente, digite:
+  uv python install (ou outra versão de sua escolha com uv python install 3.12.10)
+
+---
+
+4. Criando seu Projeto de Data Science
+Agora que as ferramentas estão instaladas, vamos criar a pasta do seu projeto. No seu PowerShell dentro da pasta da Aula, digite:
+
+  uv init meu-projeto-aula --app
+  cd meu-projeto-aula
+  uv venv
+  .venv\Scripts\Activate.ps1 (Comando para ativar o ambiente no Windows via PowerShell. 
+  Lembrando: não é obrigatório ativar o ambiente virtual para rodar seus scripts,
+  pois você pode usar uv run para executar arquivos ou comandos diretamente no ambiente isolado,
+  deixando que o uv selecione o local correto automaticamente).
+
+---
+
+5. Instalação das Bibliotecas de Data Science
+Para instalar o Pandas, Jupyter e as ferramentas de gráficos de uma só vez, rode este único comando no terminal (ainda dentro da pasta do projeto):
+
+  uv add pandas numpy jupyterlab openpyxl
+
+---
+
+6. Executando o Jupyter Notebook no VS Code
+- Abra o VS Code. No menu superior, vá em File -> Open Folder... (Abrir Pasta) e selecione a pasta meu-projeto-aula.
+- Na barra lateral esquerda, clique com o botão direito, selecione New File e salve um arquivo com o nome aula.ipynb ou aula.py.
+- Conectando o ambiente: Olhe para o canto superior direito da tela do notebook e clique em Selecionar Kernel (Select Kernel).
+- Vá em Ambientes Python... (Python Environments) e selecione a opção que contém a etiqueta (.venv) do seu projeto.
