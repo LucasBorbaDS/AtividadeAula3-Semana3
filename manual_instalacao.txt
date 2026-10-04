@@ -83,24 +83,24 @@ Depois da instalação, o `uv` atualizará o arquivo `pyproject.toml` e criará 
 
 Publicando o projeto usando o VS Code:
 
+O uv já cria e configura o projeto com o controle do Git durante o comando
+uv init. Por isso, não é necessário inicializar o repositório manualmente.
+
 1. Abra a pasta do projeto no VS Code em File > Open Folder....
 2. Na barra lateral, abra Source Control (ícone de ramificação) ou use
    Ctrl+Shift+G.
-3. Se aparecer a opção "Initialize Repository", clique nela para criar o
-   repositório Git local.
-4. Na seção "Changes", confira os arquivos que serão enviados. Clique no
+3. Na seção "Changes", confira os arquivos que serão enviados. Clique no
    botão "+" ao lado de "Changes" para preparar todos os arquivos (Stage).
-5. Digite uma mensagem, por exemplo "Adiciona projeto de análise de dados",
+4. Digite uma mensagem, por exemplo "Adiciona projeto de análise de dados",
    no campo de mensagem e clique em "Commit".
-6. Clique em "Publish Branch" ou "Publish to GitHub".
-7. Entre no GitHub quando solicitado, escolha o nome do repositório e selecione
+5. Clique em "Publish Branch" ou "Publish to GitHub".
+6. Entre no GitHub quando solicitado, escolha o nome do repositório e selecione
    se ele será público ou privado.
-8. Confirme a publicação. O VS Code criará o repositório no GitHub e enviará o
+7. Confirme a publicação. O VS Code criará o repositório no GitHub e enviará o
    commit automaticamente.
 
-Se o VS Code perguntar se deseja adicionar ou substituir arquivos, mantenha o
-README e os arquivos do projeto que já estão na pasta local. Não publique a
-pasta .venv.
+Se o VS Code perguntar se deseja adicionar ou substituir arquivos, mantenha os
+arquivos do projeto que já estão na pasta local. Não publique a pasta .venv.
 
 Para enviar alterações futuras pelo VS Code:
 
