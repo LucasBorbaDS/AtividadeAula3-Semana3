@@ -112,44 +112,35 @@ com as instruções em formato texto.
 
 ## 7. Commit e envio do projeto para o GitHub
 
-### Criar o repositório no GitHub
+### Publicar o projeto usando o VS Code
 
-1. Acesse [github.com](https://github.com/) e faça login.
-2. Clique em **New repository**.
-3. Informe um nome para o repositório.
-4. Escolha se ele será público ou privado.
-5. Não marque a opção para adicionar README, `.gitignore` ou licença, pois
-   esses arquivos já existem no projeto.
-6. Clique em **Create repository** e copie a URL do repositório.
+1. Abra a pasta do projeto no VS Code em **File > Open Folder...**.
+2. Na barra lateral, abra **Source Control** (ícone de ramificação) ou use
+   `Ctrl+Shift+G`.
+3. Se aparecer a opção **Initialize Repository**, clique nela para criar o
+   repositório Git local.
+4. Na seção **Changes**, confira os arquivos que serão enviados. Clique no
+   botão `+` ao lado de **Changes** para preparar todos os arquivos (*Stage*).
+5. Digite uma mensagem, por exemplo `Adiciona projeto de análise de dados`, no
+   campo de mensagem e clique em **Commit**.
+6. Clique em **Publish Branch** ou **Publish to GitHub**.
+7. Entre no GitHub quando solicitado, escolha o nome do repositório e selecione
+   se ele será público ou privado.
+8. Confirme a publicação. O VS Code criará o repositório no GitHub e enviará o
+   commit automaticamente.
 
-### Fazer o primeiro commit e enviar os arquivos
+> Se o VS Code perguntar se deseja adicionar ou substituir arquivos, mantenha
+> o README e os arquivos do projeto que já estão na pasta local. Não publique
+> a pasta `.venv`.
 
-Abra o PowerShell na pasta do projeto e execute os comandos abaixo. Substitua
-`SEU_USUARIO` e `NOME_DO_REPOSITORIO` pelos dados do seu repositório:
+### Enviar alterações futuras pelo VS Code
 
-```powershell
-cd caminho\para\meu-projeto-aula
-git init
-git add .
-git commit -m "Adiciona projeto de análise de dados"
-git branch -M main
-git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-git push -u origin main
-```
-
-O comando `git add .` seleciona os arquivos da pasta, `git commit` salva uma
-versão local do projeto e `git push` envia essa versão para o GitHub. Quando o
-GitHub solicitar autenticação, siga as instruções apresentadas no navegador.
-
-### Enviar alterações futuras
-
-Depois de modificar ou criar arquivos, use:
-
-```powershell
-git add .
-git commit -m "Descreve a alteração realizada"
-git push
-```
+1. Salve os arquivos modificados.
+2. Abra **Source Control** (`Ctrl+Shift+G`) e revise a lista **Changes**.
+3. Clique em `+` para preparar os arquivos desejados.
+4. Escreva uma mensagem que descreva a alteração e clique em **Commit**.
+5. Clique em **Sync Changes** ou em **Push** para enviar as alterações ao
+   GitHub.
 
 > Evite adicionar senhas, chaves de API ou outros dados pessoais ao
 > repositório. Utilize um arquivo `.gitignore` para excluir arquivos
