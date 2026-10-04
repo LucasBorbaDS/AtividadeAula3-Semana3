@@ -51,9 +51,23 @@ Agora que as ferramentas estão instaladas, vamos criar a pasta do seu projeto. 
 ---
 
 5. Instalação das Bibliotecas de Data Science
-Para instalar o Pandas, Jupyter e as ferramentas de gráficos de uma só vez, rode este único comando no terminal (ainda dentro da pasta do projeto):
+Para instalar as principais bibliotecas de análise de dados e ciência de dados de uma só vez, rode este comando no terminal (ainda dentro da pasta do projeto):
 
-  uv add pandas numpy jupyterlab openpyxl
+  uv add pandas numpy jupyterlab openpyxl matplotlib seaborn scipy scikit-learn statsmodels plotly
+
+As bibliotecas instaladas são:
+
+- `pandas`: leitura, organização e análise de tabelas e arquivos de dados.
+- `numpy`: cálculos numéricos e manipulação de arrays.
+- `openpyxl`: leitura e gravação de planilhas do Excel.
+- `matplotlib` e `seaborn`: criação de gráficos e visualizações estatísticas.
+- `scipy`: funções científicas, estatística e álgebra linear.
+- `statsmodels`: modelos estatísticos, testes de hipótese e séries temporais.
+- `scikit-learn`: pré-processamento, machine learning e avaliação de modelos.
+- `plotly`: gráficos interativos.
+- `jupyterlab`: criação e execução de notebooks no navegador e no VS Code.
+
+Depois da instalação, o `uv` atualizará o arquivo `pyproject.toml` e criará ou atualizará o `uv.lock` com as versões compatíveis das dependências.
 
 ---
 
