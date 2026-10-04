@@ -109,3 +109,48 @@ o `uv.lock` com as versões compatíveis das dependências.
 
 O projeto também contém o arquivo [`manual_instalacao.txt`](./manual_instalacao.txt)
 com as instruções em formato texto.
+
+## 7. Commit e envio do projeto para o GitHub
+
+### Criar o repositório no GitHub
+
+1. Acesse [github.com](https://github.com/) e faça login.
+2. Clique em **New repository**.
+3. Informe um nome para o repositório.
+4. Escolha se ele será público ou privado.
+5. Não marque a opção para adicionar README, `.gitignore` ou licença, pois
+   esses arquivos já existem no projeto.
+6. Clique em **Create repository** e copie a URL do repositório.
+
+### Fazer o primeiro commit e enviar os arquivos
+
+Abra o PowerShell na pasta do projeto e execute os comandos abaixo. Substitua
+`SEU_USUARIO` e `NOME_DO_REPOSITORIO` pelos dados do seu repositório:
+
+```powershell
+cd caminho\para\meu-projeto-aula
+git init
+git add .
+git commit -m "Adiciona projeto de análise de dados"
+git branch -M main
+git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+git push -u origin main
+```
+
+O comando `git add .` seleciona os arquivos da pasta, `git commit` salva uma
+versão local do projeto e `git push` envia essa versão para o GitHub. Quando o
+GitHub solicitar autenticação, siga as instruções apresentadas no navegador.
+
+### Enviar alterações futuras
+
+Depois de modificar ou criar arquivos, use:
+
+```powershell
+git add .
+git commit -m "Descreve a alteração realizada"
+git push
+```
+
+> Evite adicionar senhas, chaves de API ou outros dados pessoais ao
+> repositório. Utilize um arquivo `.gitignore` para excluir arquivos
+> desnecessários, como a pasta `.venv`.

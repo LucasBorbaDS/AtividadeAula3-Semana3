@@ -76,3 +76,40 @@ Depois da instalação, o `uv` atualizará o arquivo `pyproject.toml` e criará 
 - Na barra lateral esquerda, clique com o botão direito, selecione New File e salve um arquivo com o nome aula.ipynb ou aula.py.
 - Conectando o ambiente: Olhe para o canto superior direito da tela do notebook e clique em Selecionar Kernel (Select Kernel).
 - Vá em Ambientes Python... (Python Environments) e selecione a opção que contém a etiqueta (.venv) do seu projeto.
+
+---
+
+7. Commit e envio do projeto para o GitHub
+
+Criando o repositório no GitHub:
+
+- Acesse https://github.com/ e faça login.
+- Clique em "New repository".
+- Informe um nome para o repositório e escolha se ele será público ou privado.
+- Não marque as opções para adicionar README, .gitignore ou licença, pois esses arquivos já existem no projeto.
+- Clique em "Create repository" e copie a URL do repositório.
+
+Abra o PowerShell na pasta do projeto e execute os comandos abaixo. Substitua
+SEU_USUARIO e NOME_DO_REPOSITORIO pelos dados do seu repositório:
+
+  cd caminho\para\meu-projeto-aula
+  git init
+  git add .
+  git commit -m "Adiciona projeto de análise de dados"
+  git branch -M main
+  git remote add origin https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+  git push -u origin main
+
+O comando git add . seleciona os arquivos da pasta, git commit salva uma versão
+local do projeto e git push envia essa versão para o GitHub. Quando o GitHub
+solicitar autenticação, siga as instruções apresentadas no navegador.
+
+Para enviar alterações futuras, depois de modificar ou criar arquivos, execute:
+
+  git add .
+  git commit -m "Descreve a alteração realizada"
+  git push
+
+Importante: não adicione senhas, chaves de API ou outros dados pessoais ao
+repositório. Utilize um arquivo .gitignore para excluir arquivos desnecessários,
+como a pasta .venv.
